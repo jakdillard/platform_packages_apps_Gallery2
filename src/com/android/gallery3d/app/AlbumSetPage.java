@@ -553,13 +553,13 @@ public class AlbumSetPage extends ActivityState implements
             cameraItem.setVisible(GalleryUtils.isCameraAvailable(activity));
 
             FilterUtils.setupMenuItems(mActionBar, mMediaSet.getPath(), false);
-
+/*
             Intent helpIntent = HelpUtils.getHelpIntent(activity);
 
             MenuItem helpItem = menu.findItem(R.id.action_general_help);
             helpItem.setVisible(helpIntent != null);
             if (helpIntent != null) helpItem.setIntent(helpIntent);
-
+*/
             mActionBar.setTitle(mTitle);
             mActionBar.setSubtitle(mSubtitle);
             if (mShowClusterMenu != wasShowingClusterMenu) {
@@ -602,22 +602,25 @@ public class AlbumSetPage extends ActivityState implements
                 GalleryUtils.startCameraActivity(activity);
                 return true;
             }
-            case R.id.action_manage_offline: {
+/*            case R.id.action_manage_offline: {
                 Bundle data = new Bundle();
                 String mediaPath = mActivity.getDataManager().getTopSetPath(
                     DataManager.INCLUDE_ALL);
                 data.putString(AlbumSetPage.KEY_MEDIA_PATH, mediaPath);
                 mActivity.getStateManager().startState(ManageCachePage.class, data);
                 return true;
-            }
-            case R.id.action_sync_picasa_albums: {
+              }
+*/
+/*            case R.id.action_sync_picasa_albums: {
                 PicasaSource.requestSync(activity);
                 return true;
-            }
-            case R.id.action_settings: {
+              }
+*/
+/*            case R.id.action_settings: {
                 activity.startActivity(new Intent(activity, GallerySettings.class));
                 return true;
-            }
+              }
+*/
             default:
                 return false;
         }
